@@ -445,7 +445,7 @@ function PhotoTab({ slide, updSlide }: EditorApi) {
         </Section>
       )}
 
-      <Section title="Find a photo" hint={config.photos ? 'Free stock photos from Pexels. Click one to use it.' : undefined}>
+      <Section title="Find a photo" hint={config.photos ? `Free stock photos${config.photoProvider ? ` from ${config.photoProvider}` : ''}. Click one to use it. English search words work best.` : undefined}>
         {config.photos ? (
           <>
             <form className="search" onSubmit={(e) => { e.preventDefault(); run(q); }}>

@@ -24,11 +24,12 @@ and set these environment variables (Project → Settings → Environment Variab
 | Variable | What it does | Where to get it |
 | --- | --- | --- |
 | `STUDIO_PIN` | PIN asked once per device. Leave empty for no lock. | Pick any number |
-| `PEXELS_API_KEY` | Turns on stock photo search | Free at https://www.pexels.com/api/ |
+| `PIXABAY_API_KEY` | Better stock photo search (Pixabay) | Free at https://pixabay.com/api/docs/ (log in, the key is shown on that page) |
+| `PEXELS_API_KEY` | Alternative photo source, used first if set | https://www.pexels.com/api/ (new keys currently paused) |
 | `ANTHROPIC_API_KEY` | Turns on "✨ Polish with AI" for captions | https://console.anthropic.com |
 | `ANTHROPIC_MODEL` | Optional model override | default `claude-haiku-4-5-20251001` |
 
-Without the keys the app still works: photo search shows "not switched on" (own photos still work) and the AI box is hidden.
+Without a photo key, search falls back to Openverse public-domain images (no key needed, smaller selection). Without the AI key the polish box is hidden.
 
 ## Editing content
 

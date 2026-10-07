@@ -5,6 +5,7 @@ export interface ApiConfig {
   pinRequired: boolean;
   pinOk: boolean;
   photos: boolean;
+  photoProvider?: string;
   ai: boolean;
 }
 
@@ -31,7 +32,7 @@ export interface StockPhoto {
   creditUrl: string;
 }
 
-export async function searchPhotos(q: string, page = 1): Promise<{ photos: StockPhoto[]; more: boolean }> {
+export async function searchPhotos(q: string, page = 1): Promise<{ photos: StockPhoto[]; more: boolean; provider?: string }> {
   const r = await fetch(`/api/photos?q=${encodeURIComponent(q)}&page=${page}`, { headers: headers() });
   if (!r.ok) throw new Error((await r.json().catch(() => null))?.error || 'Photo search failed. Try again in a minute.');
   return r.json();
